@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: oklch(0.985 0.012 162);
+  --foreground: oklch(0.19 0.025 175);
+  --surface: oklch(1 0 0);
+  --surface-muted: oklch(0.96 0.018 164);
+  --border: oklch(0.9 0.025 165);
+  --muted: oklch(0.49 0.035 174);
+  --primary: oklch(0.55 0.16 157);
+  --primary-foreground: oklch(0.99 0.01 160);
+  --accent: oklch(0.86 0.17 105);
+  --ring: oklch(0.62 0.14 157);
+  --danger: oklch(0.58 0.2 25);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-ring: var(--ring);
+  --color-danger: var(--danger);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --radius-sm: 0.45rem;
+  --radius-md: 0.7rem;
+  --radius-lg: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root.dark {
+  color-scheme: dark;
+  --background: oklch(0.16 0.025 178);
+  --foreground: oklch(0.95 0.015 160);
+  --surface: oklch(0.2 0.027 178);
+  --surface-muted: oklch(0.24 0.03 176);
+  --border: oklch(0.33 0.035 175);
+  --muted: oklch(0.7 0.035 170);
+  --primary: oklch(0.77 0.16 150);
+  --primary-foreground: oklch(0.17 0.03 175);
+  --accent: oklch(0.83 0.17 105);
+  --ring: oklch(0.76 0.15 151);
+  --danger: oklch(0.72 0.16 25);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mesh-grid {
+  background-image: linear-gradient(to right, color-mix(in oklch, var(--foreground) 5%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 5%, transparent) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
+
+.soft-shadow {
+  box-shadow: 0 24px 80px -42px color-mix(in oklch, var(--foreground) 30%, transparent);
+}
+
+.markdown-content pre {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: color-mix(in oklch, var(--foreground) 7%, var(--surface));
+  padding: 1rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.82rem;
+}
+
+.markdown-content code:not(pre code) {
+  border-radius: 0.25rem;
+  background: color-mix(in oklch, var(--foreground) 8%, var(--surface));
+  padding: 0.12rem 0.3rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.88em;
+}
+
+.markdown-content p + p,
+.markdown-content ul,
+.markdown-content ol {
+  margin-top: 0.8rem;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  padding-left: 1.3rem;
+  list-style: disc;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
