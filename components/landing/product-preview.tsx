@@ -16,14 +16,14 @@ export function ProductPreview() {
   return (
     <section id="product" className="border-y border-border bg-surface-muted/40 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHeading eyebrow="Inside EchoGPT" title="Your ideas have room to breathe." description="A focused workspace for exploring, comparing, and keeping the answers worth coming back to." />
+        <SectionHeading eyebrow="" title="Your ideas have room to breathe." description="A focused workspace for exploring, comparing, and keeping the answers worth coming back to." />
         <Reveal className="mt-10 overflow-hidden rounded-xl border border-border bg-surface soft-shadow">
           <div role="tablist" aria-label="Product preview" className="flex gap-1 border-b border-border px-3 py-2.5 sm:px-5">
-            {views.map(({ id, label, icon: Icon }) => <button key={id} role="tab" aria-selected={activeView === id} onClick={() => setActiveView(id)} className={`inline-flex items-center gap-2 rounded px-3 py-2 text-xs font-medium transition sm:text-sm ${activeView === id ? "bg-primary text-primary-foreground" : "text-muted hover:bg-surface-muted hover:text-foreground"}`}><Icon aria-hidden="true" className="size-4" />{label}</button>)}
+            {views.map(({ id, label, icon: Icon }) => <button key={id} role="tab" aria-selected={activeView === id} onClick={() => setActiveView(id)} className={`inline-flex items-center gap-2 rounded px-3 py-2 text-xs font-medium transition sm:text-sm ${activeView === id ? "bg-stone-500 text-primary-foreground" : "text-muted hover:bg-gray-400 hover:text-foreground"}`}><Icon aria-hidden="true" className="size-4" /></button>)}
           </div>
           <div className="grid min-h-88 lg:grid-cols-[14rem_1fr]">
             <aside className="hidden border-r border-border bg-surface-muted/50 p-4 lg:block">
-              <div className="mb-5 flex items-center gap-2 text-xs font-semibold"><span className="grid size-6 place-items-center rounded bg-primary text-primary-foreground"><Sparkles className="size-3.5" /></span>echoGPT</div>
+              <div className="mb-5 flex items-center gap-2 text-xl font-semibold">echoGPT</div>
               <p className="mb-2 text-[10px] font-semibold uppercase text-muted">Recent</p>
               <p className="rounded bg-surface px-2.5 py-2 text-xs">Building a creative habit</p>
               <p className="mt-1 rounded px-2.5 py-2 text-xs text-muted">Notes for a new studio</p>
