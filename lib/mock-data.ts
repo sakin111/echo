@@ -1,10 +1,10 @@
 import type { Conversation, Feature, Model, PricingPlan } from "@/types";
 
 export const models: Model[] = [
-  { id: "gpt-4o", name: "GPT-4o", provider: "OpenAI", mark: "O", tone: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300" },
-  { id: "claude-3.7", name: "Claude 3.7", provider: "Anthropic", mark: "A", tone: "bg-orange-500/15 text-orange-700 dark:text-orange-300" },
-  { id: "gemini-2.5", name: "Gemini 2.5", provider: "Google", mark: "G", tone: "bg-sky-500/15 text-sky-700 dark:text-sky-300" },
-  { id: "llama-3.3", name: "Llama 3.3", provider: "Meta", mark: "M", tone: "bg-blue-500/15 text-blue-700 dark:text-blue-300" },
+  { id: "gpt-4o", name: "GPT-4o", provider: "OpenAI", mark: "/openai.svg", tone: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300" },
+  { id: "claude-3.7", name: "Claude 3.7", provider: "Anthropic", mark: "/claude.svg", tone: "bg-orange-500/15 text-orange-700 dark:text-orange-300" },
+  { id: "gemini-2.5", name: "Gemini 2.5", provider: "Google", mark: "/gemini.svg", tone: "bg-sky-500/15 text-sky-700 dark:text-sky-300" },
+  { id: "llama-3.3", name: "Llama 3.3", provider: "Meta", mark: "/lama.png", tone: "bg-blue-500/15 text-blue-700 dark:text-blue-300" },
 ];
 
 export const features: Feature[] = [
