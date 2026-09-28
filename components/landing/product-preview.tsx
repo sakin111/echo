@@ -19,7 +19,7 @@ export function ProductPreview() {
         <SectionHeading eyebrow="" title="Your ideas have room to breathe." description="A focused workspace for exploring, comparing, and keeping the answers worth coming back to." />
         <Reveal className="mt-10 overflow-hidden rounded-xl border border-border bg-surface soft-shadow">
           <div role="tablist" aria-label="Product preview" className="flex gap-1 border-b border-border px-3 py-2.5 sm:px-5">
-            {views.map(({ id, label, icon: Icon }) => <button key={id} role="tab" aria-selected={activeView === id} onClick={() => setActiveView(id)} className={`inline-flex items-center gap-2 rounded px-3 py-2 text-xs font-medium transition sm:text-sm ${activeView === id ? "bg-stone-500 text-primary-foreground" : "text-muted hover:bg-gray-400 hover:text-foreground"}`}><Icon aria-hidden="true" className="size-4" /></button>)}
+            {views.map(({ id, icon: Icon }) => <button key={id} role="tab" aria-selected={activeView === id} onClick={() => setActiveView(id)} className={`inline-flex items-center gap-2 rounded px-3 py-2 text-xs font-medium transition sm:text-sm ${activeView === id ? "bg-stone-500 text-primary-foreground" : "text-muted hover:bg-gray-400 hover:text-foreground"}`}><Icon aria-hidden="true" className="size-4" /></button>)}
           </div>
           <div className="grid min-h-88 lg:grid-cols-[14rem_1fr]">
             <aside className="hidden border-r border-border bg-surface-muted/50 p-4 lg:block">
@@ -32,7 +32,7 @@ export function ProductPreview() {
             </aside>
             <div className="flex flex-col justify-between p-5 sm:p-8">
               <div>
-                <p className="text-xs font-medium text-primary">{activeView === "chat" ? "GPT-4o · Claude 3.7" : activeView === "compare" ? "Side-by-side view" : "Saved prompts"}</p>
+               
                 <h3 className="mt-3 text-xl font-semibold">{activeView === "chat" ? "How can I make time for creative work?" : activeView === "compare" ? "Two useful angles, at once." : "Start with a prompt that gets you moving."}</h3>
                 <div className="mt-5 grid gap-3 md:grid-cols-2">
                   <div className="rounded-lg border border-border p-4"><p className="text-xs font-semibold">{activeView === "library" ? "Find your focus" : "GPT-4o"}</p><p className="mt-2 text-sm leading-6 text-muted">Protect a small, repeatable block of time. Start with 25 minutes and define one finish line before you begin.</p></div>

@@ -26,7 +26,7 @@ export function Footer() {
           <p className="mt-1 text-sm text-muted">Product notes and ways to think better. No noise.</p>
           <div className="mt-4 flex gap-2">
             <Input id="newsletter-email" type="email" placeholder="you@example.com" required aria-label="Email address for newsletter" />
-            <Button aria-label={subscribed ? "Subscribed" : "Subscribe to newsletter"} type="submit" size="icon">
+            <Button aria-label={subscribed ? "Subscribed" : "Subscribe to newsletter"} type="submit" size="icon" className="bg-stone-500">
               {subscribed ? <Check aria-hidden="true" className="size-4" /> : <Send aria-hidden="true" className="size-4" />}
             </Button>
           </div>

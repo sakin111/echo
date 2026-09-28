@@ -11,10 +11,10 @@ export function ExtensionFrame() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-12 pt-8 sm:px-8 sm:pb-16 lg:grid-cols-[1fr_420px] lg:gap-16 lg:pt-12">
         <section className="max-w-lg">
           <Link className="mb-7 inline-flex items-center gap-2 text-xs font-medium text-muted transition hover:text-foreground" href="/"><ArrowLeft aria-hidden="true" className="size-3.5" /> Back to EchoGPT</Link>
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-medium text-muted"><Puzzle aria-hidden="true" className="size-4 text-primary" /> Browser companion concept</div>
-          <h1 className="text-4xl font-semibold leading-tight tracking-normal sm:text-5xl">A little help, right where you are.</h1>
-          <p className="mt-4 max-w-md text-sm leading-7 text-muted sm:text-base">A compact EchoGPT popup concept for quick questions, useful shortcuts, and recent conversations, without leaving your current tab.</p>
-          <div className="mt-8 flex items-center gap-3 text-xs text-muted"><span className="grid size-8 place-items-center rounded-md bg-primary/10 text-primary"><Puzzle className="size-4" /></span><span>EchoGPT for Chrome<br /><span className="text-[10px]">Interactive frontend preview</span></span></div>
+         
+          <h1 className="text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl text-shadow-2xs text-shadow-gray-300">A little help, right where you are.</h1>
+          <p className="mt-4 max-w-md text-sm leading-7 text-gray-400 sm:text-sm">A compact EchoGPT popup concept for quick questions, useful shortcuts, and recent conversations, without leaving your current tab.</p>
+          <div className="mt-8 flex items-center gap-3 text-xs text-muted"><span className="grid size-8 place-items-center rounded-md bg-white text-stone-400"><Puzzle className="size-4" /></span><span>EchoGPT for Chrome<br /><span className="text-[10px]">Interactive frontend preview</span></span></div>
         </section>
         <div className="mx-auto w-full max-w-100">
           <div className="mb-2 flex items-center justify-between px-1 text-[10px] font-medium uppercase tracking-widest text-muted"><span>Popup preview</span><span>400 × 600</span></div>

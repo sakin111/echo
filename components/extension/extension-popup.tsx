@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import { Tooltip } from "@/components/ui/tooltip";
+import Image from "next/image";
 
 type View = "chat" | "history" | "actions" | "settings";
 
@@ -66,7 +67,7 @@ export function ExtensionPopup() {
           <span className="grid size-8 shrink-0 place-items-center rounded-md bg-primary text-primary-foreground"><AudioLines aria-hidden="true" className="size-4" /></span>
           <span className="text-sm font-semibold">Echo<span className="text-primary">GPT</span></span>
           <span className="mx-1 h-5 border-l border-border" />
-          <label className="relative flex min-w-0 items-center gap-1.5 rounded px-1.5 py-1 text-xs text-muted hover:bg-surface-muted"><span className={`grid size-5 shrink-0 place-items-center rounded text-[9px] font-bold ${selectedModel.tone}`}>{selectedModel.mark}</span><span className="max-w-24 truncate">{selectedModel.name}</span><ChevronDown aria-hidden="true" className="size-3 shrink-0" /><select aria-label="Choose default model" value={modelId} onChange={(event) => setModelId(event.target.value)} className="absolute inset-0 cursor-pointer opacity-0">{models.map((model) => <option key={model.id} value={model.id}>{model.name}</option>)}</select></label>
+          <label className="relative flex min-w-0 items-center gap-1.5 rounded px-1.5 py-1 text-xs text-muted hover:bg-surface-muted"><span className={`grid size-5 shrink-0 place-items-center rounded text-[9px] font-bold ${selectedModel.tone}`}><Image src={selectedModel.mark} alt={selectedModel.name} width={24} height={24} /></span><span className="max-w-24 truncate">{selectedModel.name}</span><ChevronDown aria-hidden="true" className="size-3 shrink-0" /><select aria-label="Choose default model" value={modelId} onChange={(event) => setModelId(event.target.value)} className="absolute inset-0 cursor-pointer opacity-0">{models.map((model) => <option key={model.id} value={model.id}>{model.name}</option>)}</select></label>
         </div>
         <Tooltip label="Settings"><Button aria-label="Open settings" variant="ghost" size="icon" className="size-8" onClick={() => setView("settings")}><Settings2 className="size-4" /></Button></Tooltip>
       </header>
