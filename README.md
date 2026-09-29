@@ -1,5 +1,7 @@
 # EchoGPT Redesign
 
+Live demo: https://echo-chi-mocha-49.vercel.app/
+
 A frontend-only product concept for EchoGPT, built with Next.js App Router, TypeScript, Tailwind CSS, and reusable shadcn-style UI primitives. It contains a marketing site, a multi-model chat workspace, and a simulated Chrome extension popup. No backend or model API is connected.
 
 ## Getting Started
