@@ -18,7 +18,7 @@ export function ExtensionFrame() {
         </section>
         <div className="mx-auto w-full max-w-100">
           <div className="mb-2 flex items-center justify-between px-1 text-[10px] font-medium uppercase tracking-widest text-muted"><span>Popup preview</span><span>400 × 600</span></div>
-          <div className="rounded-xl border border-border bg-background p-1.5 shadow-2xl">
+          <div className="rounded-xl border border-border bg-white p-1.5 shadow-2xl">
             <div className="mb-1.5 flex h-7 items-center gap-1.5 px-1.5" aria-hidden="true"><span className="size-2 rounded-full bg-danger/70" /><span className="size-2 rounded-full bg-accent" /><span className="size-2 rounded-full bg-primary/60" /><span className="ml-2 flex h-5 flex-1 items-center rounded bg-surface-muted px-2 text-[9px] text-muted">extension://echogpt</span></div>
             <div className="h-150 max-h-[calc(100dvh-10rem)] min-h-128 w-full"><ExtensionPopup /></div>
           </div>

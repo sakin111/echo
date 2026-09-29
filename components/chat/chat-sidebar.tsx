@@ -32,7 +32,7 @@ export function ChatSidebar({ conversations, activeId, onSelect, onNew, open, on
           <Button className="md:hidden" size="icon" variant="ghost" aria-label="Close menu" onClick={onClose}><X className="size-4" /></Button>
         </div>
         <div className="px-3 pb-3">
-          <Button className="w-full justify-start" onClick={() => { onNew(); onClose(); }}><MessageSquarePlus aria-hidden="true" className="size-4" />New chat</Button>
+          <Button className="w-full justify-start bg-gray-100 text-gray-800" onClick={() => { onNew(); onClose(); }}><MessageSquarePlus aria-hidden="true" className="size-4" />New chat</Button>
         </div>
         <div className="px-3 pb-3">
           <label className="relative block"><Search aria-hidden="true" className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted" /><Input aria-label="Search conversations" placeholder="Search conversations" value={query} onChange={(event) => setQuery(event.target.value)} className="h-9 pl-9 text-xs" /></label>
@@ -40,7 +40,7 @@ export function ChatSidebar({ conversations, activeId, onSelect, onNew, open, on
         <Separator />
         <div className="px-4 pb-2 pt-4 text-[10px] font-semibold uppercase tracking-[0.1em] text-muted">Recent</div>
         <ScrollArea className="flex-1 px-2 pb-3">
-          {filtered.length ? filtered.map((conversation) => <button key={conversation.id} onClick={() => { onSelect(conversation.id); onClose(); }} aria-current={activeId === conversation.id ? "page" : undefined} className={`mb-1 flex w-full items-start gap-2.5 rounded-md px-2.5 py-2.5 text-left transition ${activeId === conversation.id ? "bg-surface-muted text-foreground" : "text-muted hover:bg-surface-muted/70 hover:text-foreground"}`}><span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded bg-background"><AudioLines aria-hidden="true" className="size-3.5" /></span><span className="min-w-0"><span className="block truncate text-xs font-medium">{conversation.title}</span><span className="mt-1 block text-[10px] text-muted">{conversation.updatedAt}</span></span></button>) : <p className="px-3 py-6 text-center text-xs text-muted">No conversations found.</p>}
+          {filtered.length ? filtered.map((conversation) => <button key={conversation.id} onClick={() => { onSelect(conversation.id); onClose(); }} aria-current={activeId === conversation.id ? "page" : undefined} className={`mb-1 flex w-full items-start gap-2.5 rounded-md px-2.5 py-2.5 text-left transition ${activeId === conversation.id ? "bg-surface-muted text-foreground" : "text-muted hover:bg-surface-muted/70 hover:text-foreground"}`}><span className="min-w-0"><span className="block truncate text-xs font-medium">{conversation.title}</span><span className="mt-1 block text-[10px] text-muted">{conversation.updatedAt}</span></span></button>) : <p className="px-3 py-6 text-center text-xs text-muted">No conversations found.</p>}
         </ScrollArea>
         <Separator />
         <div className="p-3"><Link href="/" className="flex items-center justify-between rounded-md px-2 py-2 text-xs text-muted transition hover:bg-surface-muted hover:text-foreground"><span>EchoGPT home</span><span aria-hidden="true">↗</span></Link><p className="px-2 pt-2 text-[10px] text-muted">Frontend preview · local demo</p></div>
